@@ -1,0 +1,5 @@
+.container
+  .row
+    .col-12#flash-wrapper.pt-sm-5.pt-2
+      - flash.each do |name, msg|
+        div class="alert alert-#{flash_class(name)}" = msg
