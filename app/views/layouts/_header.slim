@@ -1,2 +1,8 @@
-nav.header-area.navbar.fixed-top.navbar-expand-custom.navbar-light.bg-light
-  = link_to 'Home', root_path, class: 'none-underline-link'
+.topnav.fixed-top
+  = link_to 'Home', root_path, class: "active"
+  a href="#about"  Blogs
+  a href="#contact"  Contact
+  .header-right-container
+    form action="/action_page.php"
+      button.btn.btn-primary type="submit"  Sign up
+      button.btn.btn-light.text-dark type="submit"  Sign in
