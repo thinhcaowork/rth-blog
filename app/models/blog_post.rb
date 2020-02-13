@@ -16,6 +16,13 @@
 #
 
 class BlogPost < ApplicationRecord
+   SORT_PARAMS = {
+    created_at_desc: 'created_at desc',
+    created_at_asc: 'created_at asc'
+  }.freeze
+
+  DEFAULT_SORT = SORT_PARAMS[:created_at_desc]
+
   belongs_to :user
   has_many :comments
 

@@ -1,16 +1,19 @@
 .row
   .leftcolumn
-    .card
-      h2= blog_post.title
-      h5 Title description, Dec 7, 2017
-      .fakeimg
-        = image_tag blog_post.user.image_url, class: 'mb-3'
-      p= blog_post.content
+    = link_to blog_post, class: 'none-underline-link none-style-link' do
+      .card
+        h2= blog_post.title
+        h5 Title description, Dec 7, 2017
+        - if blog_post.image_url
+          .fakeimg
+            = image_tag blog_post.image_url, class: 'mb-3'
+        p= blog_post.content
   .rightcolumn
     .card
       h2= blog_post.user.decorate.fullname
-      .fakeimg
-        = image_tag blog_post.user.image_url
+      - if blog_post.user.image_url
+        .fakeimg
+          = image_tag blog_post.user.image_url, class: 'rounded-circle'
       p Some text about me in culpa qui officia deserunt mollit anim..
     .card
       h3 Follow Me

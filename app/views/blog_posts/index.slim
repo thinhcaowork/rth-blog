@@ -1,7 +1,10 @@
 .page-area.my-area.py-5
   .container
-    - @blog_posts.each do |blog_post|
-      = render 'blog_post', blog_post: blog_post
+    .row
+      = render 'order_blog_posts', sort: @sort
+    #blog-posts-grid
+      - @blog_posts.each do |blog_post|
+        = render 'blog_post', blog_post: blog_post
 
     .paginator.mt-3.row
       = paginate @blog_posts, theme: 'twitter-bootstrap-4'

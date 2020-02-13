@@ -1,0 +1,5 @@
+- sort ||= BlogPost::DEFAULT_SORT
+
+select.form-control#sort-blog-posts
+  option[value='created_at desc' selected=(sort.eql?('created_at_desc'))]= 'created_at DESC'
+  option[value='created_at asc' selected=(sort.eql?('created_at_asc'))]= 'created_at ASC'

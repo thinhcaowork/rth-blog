@@ -1,0 +1,4 @@
+- return if @page > @blog_posts.total_pages
+| $('#blog-posts-grid').empty();
+- @blog_posts.each do |blog_post|
+  | $('#blog-posts-grid').append('#{j render("blog_posts/blog_post", blog_post: blog_post)}');
