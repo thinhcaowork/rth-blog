@@ -1,0 +1,17 @@
+.row
+  .leftcolumn
+    .card
+      h2= blog_post.title
+      h5 Title description, Dec 7, 2017
+      .fakeimg
+        = image_tag blog_post.user.image_url, class: 'mb-3'
+      p= blog_post.content
+  .rightcolumn
+    .card
+      h2= blog_post.user.decorate.fullname
+      .fakeimg
+        = image_tag blog_post.user.image_url
+      p Some text about me in culpa qui officia deserunt mollit anim..
+    .card
+      h3 Follow Me
+      p Some text..

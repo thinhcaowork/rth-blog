@@ -5,6 +5,7 @@
 #  id              :integer          not null, primary key
 #  email           :string           not null
 #  first_name      :string(40)
+#  image           :string
 #  last_name       :string(40)
 #  password_digest :string           not null
 #  created_at      :datetime         not null
@@ -20,4 +21,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   scope :by_email, -> (email){ where(email: email) }
+
+  mount_uploader :image, UserUploader
 end

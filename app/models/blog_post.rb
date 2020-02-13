@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  content    :text             not null
+#  image      :string
 #  title      :string(100)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -19,4 +20,6 @@ class BlogPost < ApplicationRecord
   has_many :comments
 
   validates :title, :content, presence: true
+
+  mount_uploader :image, BlogPostUploader
 end

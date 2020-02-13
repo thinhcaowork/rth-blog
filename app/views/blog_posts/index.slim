@@ -1,2 +1,7 @@
 .page-area.my-area.py-5
   .container
+    - @blog_posts.each do |blog_post|
+      = render 'blog_post', blog_post: blog_post
+
+    .paginator.mt-3.row
+      = paginate @blog_posts, theme: 'twitter-bootstrap-4'

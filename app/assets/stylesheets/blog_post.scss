@@ -1,0 +1,40 @@
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+.fakeimg {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.card {
+  background-color: $white;
+  padding: 20px;
+  margin-top: 20px;
+}
+.row {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@media screen and (max-width: 800px) {
+  .leftcolumn {
+    width: 100%;
+    padding: 0;
+  }
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
