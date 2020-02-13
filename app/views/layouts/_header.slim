@@ -1,8 +1,15 @@
-.topnav.fixed-top
-  = link_to 'Home', root_path, class: "active"
-  a href="#about"  Blogs
-  a href="#contact"  Contact
+.topnav.fixed-top.header-area
+  = link_to 'Home', root_path, class: "active hover-gray none-underline-link"
+  a.hover-gray.none-underline-link href="#about"  Blogs
+  a.hover-gray.none-underline-link href="#contact"  Contact
   .header-right-container
-    form action="/action_page.php"
-      button.btn.btn-primary type="submit"  Sign up
-      button.btn.btn-light.text-dark type="submit"  Sign in
+    - if current_user
+      .dropdown.show
+        a#dropdown-header.text-dark.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="https://example.com"
+          = "Hi, #{current_user.decorate.fullname}!"
+        .dropdown-menu aria-labelledby="dropdown-header"
+          = link_to 'Log out', sessions_path, method: :delete, class: 'text-dark m-0 dropdown-item'
+
+    - else
+      = link_to('Sign up', new_registrations_path, class: 'btn btn-primary')
+      = link_to('Sign in', new_sessions_path, class: 'btn btn-light text-dark')

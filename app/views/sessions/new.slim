@@ -1,0 +1,17 @@
+.page-area.my-area.py-5
+  .container
+    h2 Login Form
+    = form_with(url: sessions_path, local: true) do |form|
+      .container
+        .form-group
+          = form.label :email
+          = form.text_field :email, class: 'form-control', placeholder: 'Enter you email', required: true, autofocus: true
+        .form-group
+          = form.label :password
+          = form.password_field :password, class: 'form-control', placeholder: 'Enter Password', required: true
+        .form-group
+          = form.submit 'Log in', class: 'btn btn-success btn-lg w-100'
+      .container.bg-light
+        button.btn.btn-danger.cancelbtn type="button"  Cancel
+        span.psw
+          a href="javascript:void(0)" Forgot password?

@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sessions:
+    create:
+      login_success: Logged in successfully
+      incorrect_email_or_password: Incorrect email or password
+    destroy:
+      logged_out: Logged out
+  registrations:
+    create:
+      sign_up_success: Signed up successfully

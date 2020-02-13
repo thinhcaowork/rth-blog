@@ -18,4 +18,6 @@ class User < ApplicationRecord
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true, length: { minimum: 6 }
+
+  scope :by_email, -> (email){ where(email: email) }
 end
