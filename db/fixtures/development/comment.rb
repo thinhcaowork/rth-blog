@@ -1,0 +1,16 @@
+Comment.seed(
+  :id,
+  { id: 1, user_id: 1, blog_post_id: 2, content: 'This is an example of comment 1' },
+  { id: 2, user_id: 1, blog_post_id: 4, content: 'This is an example of comment 2' },
+  { id: 3, user_id: 1, blog_post_id: 7, content: 'This is an example of comment 3' },
+  { id: 4, user_id: 1, blog_post_id: 9, content: 'This is an example of comment 4' },
+  { id: 5, user_id: 2, blog_post_id: 2, content: 'This is an example of comment 5' },
+  { id: 6, user_id: 2, blog_post_id: 3, content: 'This is an example of comment 6' },
+  { id: 7, user_id: 3, blog_post_id: 5, content: 'This is an example of comment 7' },
+  { id: 8, user_id: 3, blog_post_id: 1, content: 'This is an example of comment 8' },
+  { id: 9, user_id: 3, blog_post_id: 6, content: 'This is an example of comment 9' },
+  { id: 10, user_id: 4, blog_post_id: 9, content: 'This is an example of comment 10' },
+  { id: 11, user_id: 2, blog_post_id: 7, content: 'This is an example of comment 11' },
+  { id: 12, user_id: 1, blog_post_id: 8, content: 'This is an example of comment 12' },
+  { id: 13, user_id: 4, blog_post_id: 8, content: 'This is an example of comment 13' },
+)
