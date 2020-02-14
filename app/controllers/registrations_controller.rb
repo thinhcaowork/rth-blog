@@ -2,10 +2,6 @@ class RegistrationsController < ApplicationController
   include AccessTab
   before_action :restrict_access, only: %i[new create]
 
-  def new
-    @user = User.new
-  end
-
   def create
     user = User.create(user_params)
 

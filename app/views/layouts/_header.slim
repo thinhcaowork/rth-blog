@@ -1,7 +1,7 @@
 .topnav.fixed-top.header-area
   = link_to 'Home', root_path, class: "active hover-gray none-underline-link"
   = link_to 'Blog Posts', root_path, class: "hover-gray none-underline-link"
-  a.hover-gray.none-underline-link href="#contact"  Contact
+  = link_to 'New Blog Post', new_blog_post_path, class: 'hover-gray none-underline-link'
   .header-right-container
     - if current_user
       .dropdown.show

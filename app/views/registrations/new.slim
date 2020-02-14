@@ -1,7 +1,7 @@
 .page-area.my-area.py-5
   .container
     h2 Sign Up Form
-    = form_with(model: @user, url: registrations_path, local: true) do |form|
+    = form_with(model: User.new, url: registrations_path, local: true) do |form|
       .container
         .form-group
           = form.label :email

@@ -5,6 +5,7 @@ module ApplicationHelper
     when 'success' then "success"
     when 'fail', 'danger'
      "danger"
+    when 'warning' then "warning"
     end
   end
 end

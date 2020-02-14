@@ -1,0 +1,21 @@
+.page-area.my-area.py-5
+  .container
+    h2 New Blog Post
+    = form_with(model: BlogPost.new, url: blog_posts_path, local: true) do |form|
+      .container
+        .form-group
+          = form.label :title
+          = form.text_field :title, class: 'form-control', placeholder: 'Enter the blog post title', required: true, autofocus: true
+        .form-group
+          = form.label :content
+          = form.text_area :content, class: 'form-control', placeholder: 'Enter the blog post content', rows: 8
+        .form-group
+          = form.label :image
+          = form.file_field :image, class: 'form-control'
+        .form-group
+          = form.submit 'Save', class: 'btn btn-success btn-lg w-100'
+
+      .container.bg-light
+        button.btn.btn-danger.cancelbtn type="button"  Cancel
+        span.psw
+          a href="javascript:void(0)" Forgot password?
