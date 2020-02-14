@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   PAGE_PER = 4
-  before_action :require_sign_in, only: %i[new create]
+  before_action :authenticate_user, only: %i[new create]
 
   def index
     @page = params[:page].to_i
@@ -12,7 +12,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.find(params[:id])
+    @blog_post = BlogPost.includes(:comments).find(params[:id])
   end
 
   def create
@@ -33,11 +33,5 @@ class BlogPostsController < ApplicationController
     params.require(:blog_post).permit(:title, :content, :image).tap do |whitelist|
       whitelist[:user_id] = current_user.id
     end
-  end
-
-  def require_sign_in
-    return if current_user
-
-    redirect_to new_sessions_path, flash: { warning: 'You need to sign in to create blog post' }
   end
 end

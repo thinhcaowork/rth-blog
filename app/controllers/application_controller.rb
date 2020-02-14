@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate_user
-    return redirect_to new_session_path(redirect_to: redirect_after_sign_in) unless current_user
+    return if current_user
+
+    redirect_to(new_sessions_path(redirect_to: redirect_after_sign_in), flash: { warning: 'You need to sign in first' })
   end
 
   private
