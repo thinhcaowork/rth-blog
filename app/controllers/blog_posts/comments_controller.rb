@@ -1,5 +1,5 @@
 module BlogPosts
-  class CommentsController < ApplicationController
+  class CommentsController < WebApplicationController
     before_action :find_blog_post, :authenticate_user
 
     def create

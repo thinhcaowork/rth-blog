@@ -6,16 +6,18 @@
       li.list-group-item
         .row
           .col-3.col-md-2.col-lg-1.text-center
-            = image_tag comment.user.image_url, size: "60x60", class: 'rounded-circle'
+            - if comment.user.image_url
+              = image_tag comment.user.image_url, size: "60x60", class: 'rounded-circle'
           .col-9.col-md-10.col-lg-9.comment-info
             h4= comment.user.decorate.fullname
             p= comment.content
 
 .row.mt-4
   .col-3.col-md-2.col-lg-1.text-center
-    = image_tag current_user.image_url, size: "60x60", class: 'rounded-circle'
+    - if current_user.image_url
+      = image_tag current_user.image_url, size: "60x60", class: 'rounded-circle'
   .col-9.col-md-10.col-lg-9.comment-info
-    = form_with(model: Comment.new, url: blog_post_comments_path(blog_post_id: blog_post.id), html: { class: 'w-100 border-0' }) do |form|
+    = form_with(model: Comment.new, url: blog_post_comments_path(blog_post_id: blog_post.id), local: true, html: { class: 'w-100 border-0' }) do |form|
       .form-group
         = form.text_area :content, class: 'form-control', placeholder: 'Enter your comment'
       .form-group
