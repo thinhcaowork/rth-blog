@@ -1,15 +1,9 @@
 default: &default
   adapter: postgresql
-  encoding: utf8
-  template: template0
-  collation: en_US.UTF-8
-  ctype: en_US.UTF-8
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost
-  username: thinhct #PLEASE REPLACE WITH YOUR LOCAL USERNAME
-  password: 123 #PLEASE REPLACE WITH YOUR LOCAL PASSWORD
+  timeout: 5000
+  username: thinhct
+  password: <%= ENV['DB_PASSWORD'] %>
 
 development:
   <<: *default
@@ -70,5 +64,6 @@ test:
 #
 production:
   <<: *default
+  database: rth_blog_production
   url: <%=ENV['DATABASE_URL']%>
 
