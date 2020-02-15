@@ -3,11 +3,11 @@ class BlogPostsController < ApplicationController
   before_action :authenticate_user, only: %i[new create]
 
   def index
-    @page = params[:page].to_i
+    @page = params[:page]
     @sort = params[:sort] || BlogPost::DEFAULT_SORT
     @blog_posts = BlogPost.includes(:user)
                           .order(@sort)
-                          .page(params[:page])
+                          .page(@page)
                           .per(PAGE_PER)
   end
 

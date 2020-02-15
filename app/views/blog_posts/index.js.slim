@@ -1,4 +1,5 @@
-- return if @page > @blog_posts.total_pages
+- return if @page.to_i > @blog_posts.total_pages
 | $('#blog-posts-grid').empty();
 - @blog_posts.each do |blog_post|
   | $('#blog-posts-grid').append('#{j render("blog_posts/blog_post", blog_post: blog_post)}');
+| $('.paginator').empty().append('#{j paginate @blog_posts, params: { sort: @sort }, theme: 'twitter-bootstrap-4'}');
