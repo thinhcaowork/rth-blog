@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class ApiApplicationController < ApplicationController
-  def not_found
-    render json: { error: 'not_found' }
-  end
+  protect_from_forgery with: :null_session
 
   def authorize_request
     begin

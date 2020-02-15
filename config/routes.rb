@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
   scope module: :v0, path: :v0 do
-    resources :blog_posts, only: :index
+    resources :blog_posts
   end
 
   post '/auth/login', to: 'v0/api_authentication#login'
