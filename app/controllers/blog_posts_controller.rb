@@ -30,7 +30,7 @@ class BlogPostsController < WebApplicationController
   private
 
   def blog_post_params
-    params.require(:blog_post).permit(:title, :content, :image).tap do |whitelist|
+    params.require(:blog_post).permit(:title, :content).tap do |whitelist|
       whitelist[:user_id] = current_user.id
     end
   end

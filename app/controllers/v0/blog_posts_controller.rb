@@ -44,7 +44,7 @@ module V0
     end
 
     def blog_post_params
-      params.permit(:title, :content, :image).tap do |whitelist|
+      params.permit(:title, :content).tap do |whitelist|
         whitelist[:user_id] = @current_user.id
       end
     end

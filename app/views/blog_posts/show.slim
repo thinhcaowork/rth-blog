@@ -6,15 +6,13 @@
           h2= @blog_post.title
           h5 Title description, Dec 7, 2017
           .fakeimg
-            - if @blog_post.user.image_url
-              = image_tag @blog_post.user.image_url, class: 'mb-3'
+            = image_tag 'pexels-photo-404630.jpg', class: 'mb-3'
           p= @blog_post.content
       .rightcolumn
         .card
           h2= @blog_post.user.decorate.fullname
           .fakeimg
-            - if @blog_post.user.image_url
-              = image_tag @blog_post.user.image_url
+            = image_tag 'pexels-photo-404630.jpg'
           p Some text about me in culpa qui officia deserunt mollit anim..
         .card
           h3 Follow Me
