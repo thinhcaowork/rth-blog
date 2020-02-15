@@ -1,4 +1,4 @@
-class RegistrationsController < ApplicationController
+class RegistrationsController < WebApplicationController
   include AccessTab
   before_action :restrict_access, only: %i[new create]
 

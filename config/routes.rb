@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       resources :comments, only: %i[create destroy]
     end
   end
+  scope module: :v0, path: :v0 do
+    resources :blog_posts, only: :index
+  end
 
-
+  post '/auth/login', to: 'v0/api_authentication#login'
   root to: 'blog_posts#index'
 end

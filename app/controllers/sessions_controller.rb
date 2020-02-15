@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < WebApplicationController
   include AccessTab
   before_action :restrict_access, only: %i[new create]
 

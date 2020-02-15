@@ -1,4 +1,4 @@
-class BlogPostsController < ApplicationController
+class BlogPostsController < WebApplicationController
   PAGE_PER = 4
   before_action :authenticate_user, only: %i[new create]
 
