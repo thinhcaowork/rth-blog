@@ -2,13 +2,13 @@
 #
 # Table name: blog_posts
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  content    :text             not null
 #  image      :string
 #  title      :string(100)      not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
+#  user_id    :bigint
 #
 # Indexes
 #

@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2020_02_13_172225) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blog_posts", force: :cascade do |t|
     t.string "title", limit: 100, null: false
     t.text "content", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_02_13_172225) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content", null: false
-    t.integer "blog_post_id"
-    t.integer "user_id"
+    t.bigint "blog_post_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_post_id"], name: "index_comments_on_blog_post_id"
