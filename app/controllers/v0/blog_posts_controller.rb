@@ -4,7 +4,9 @@ module V0
     before_action :find_blog_post, only: %i[show update destroy]
 
     def index
-      blog_posts = BlogPost.order('created_at desc')
+      blog_posts = BlogPost.all
+      blog_posts = blog_posts.search(params[:search]) if params[:search]
+      blog_posts = blog_posts.order('created_at desc')
 
       render json: { results: blog_posts }
     end

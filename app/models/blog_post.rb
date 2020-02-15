@@ -29,4 +29,6 @@ class BlogPost < ApplicationRecord
   validates :title, :content, presence: true
 
   mount_uploader :image, BlogPostUploader
+
+  scope :search, ->(query){ where('title LIKE :query OR content LIKE :query', query: "%#{query.downcase}%") }
 end
