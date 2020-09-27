@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'ruby --version'
+                echo 'Hello world! RTH - Tavin' 
             }
         }
     }
